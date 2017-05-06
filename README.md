@@ -40,6 +40,8 @@ Adding additional backends is as simple as scaling the deployment:
 kubectl scale deployments backplane-ingress-controller -n kube-system --replicas=3
 ```
 
+![screenshot of labels](Documentation/imgs/scale.png)
+
 ## Future Work
 
 - Make a native Backplane Ingress controller instead of relying on nginx see https://github.com/kubernetes/ingress/tree/master/examples/custom-controller
