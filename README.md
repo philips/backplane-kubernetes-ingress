@@ -24,6 +24,11 @@ kubectl create -f https://raw.githubusercontent.com/philips/backplane-kubernetes
 kubectl create -f https://raw.githubusercontent.com/kubernetes/ingress/master/examples/deployment/nginx/default-backend.yaml
 ```
 
+If all goes well the [Backplane Dashboard](https://www.backplane.io/dashboard) should show a single backend.
+
+![screenshot of dashboard](Documentation/imgs/bp.png)
+
+
 ## Debugging Logs
 
 NGINX:
