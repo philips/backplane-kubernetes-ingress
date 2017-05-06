@@ -24,6 +24,20 @@ kubectl create -f https://raw.githubusercontent.com/philips/backplane-kubernetes
 kubectl create -f https://raw.githubusercontent.com/kubernetes/ingress/master/examples/deployment/nginx/default-backend.yaml
 ```
 
+## Debugging Logs
+
+NGINX:
+
+```
+kubectl get pods --namespace=kube-system -l k8s-app=backplane-ingress-controller -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | xargs -I {} kubectl -n kube-system -c nginx-ingress-controller logs {}
+```
+
+Backplane Agent:
+
+```
+kubectl get pods --namespace=kube-system -l k8s-app=backplane-ingress-controller -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | xargs -I {} kubectl -n kube-system -c bpagent logs {}
+```
+
 ## Deploy an App w/ Ingress
 
 ```
