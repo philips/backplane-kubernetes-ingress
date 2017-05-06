@@ -1,13 +1,13 @@
 ## Backplane Container
 
-Simple hacks to get Backplane.io agent exposing Kubernetes Ingress.
+Simple setup to get Backplane.io agent exposing Kubernetes Ingress.
 
 ## Setup Backplane Ingress Controller
 
 Setup the Backplane secret:
 
 ```
-export BACKPLANE_TOKEN=Rf2aP063Lf_XXhDRTW9G8h50bXWCYAjjwlaA5nLhL9j3Vzy65i-UlpLikg-vGGlq9BvHQkiqmGsAvWjWqiwQChX-mlw=
+export BACKPLANE_TOKEN=SECRETS_GO_HERE
 kubectl create secret -n kube-system generic backplane-token --from-literal=bptoken=${BACKPLANE_TOKEN}
 ```
 
