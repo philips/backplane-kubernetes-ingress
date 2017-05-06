@@ -1,6 +1,6 @@
 ## Backplane.io Ingress Controller
 
-Simple setup to get [Backplane.io](https://www.backplane.io/) hooked up as a Kubernetes Ingress Controller.
+Simple setup to get [Backplane.io](https://www.backplane.io/) hooked up as a Kubernetes Ingress Controller. This makes it possible to do things like have a publicly available load balancer from a behind-the-firewall install with say [Tectonic Bare-metal](https://coreos.com/tectonic) or [minikube](https://github.com/kubernetes/minikube).
 
 ## Setup Backplane Ingress Controller
 
