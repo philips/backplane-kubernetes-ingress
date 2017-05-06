@@ -21,7 +21,7 @@ spec:
         image: backplaneio/backplane
         args:
          - "connect"
-         - "$(BACKPLANE_LABELS)"
+         - "$(BACKPLANE_LABELS),podName=$(POD_NAME),podNamespace=$(POD_NAMESPACE)"
          - "http://127.0.0.1:80"
         env:
          - name: BACKPLANE_TOKEN
@@ -34,6 +34,14 @@ spec:
              configMapKeyRef:
                name: backplane-config
                key: labels
+         - name: POD_NAME
+           valueFrom:
+             fieldRef:
+               fieldPath: metadata.name
+         - name: POD_NAMESPACE
+           valueFrom:
+             fieldRef:
+               fieldPath: metadata.namespace
       - image: gcr.io/google_containers/nginx-ingress-controller:0.9.0-beta.5
         name: nginx-ingress-controller
         readinessProbe:
