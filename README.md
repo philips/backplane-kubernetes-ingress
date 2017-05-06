@@ -32,6 +32,14 @@ kubectl expose deployment host-info --session-affinity=None --port 8080
 kubectl create -f https://raw.githubusercontent.com/philips/host-info/master/ingress.yaml
 ```
 
+## Scaling
+
+Adding additional backends is as simple as scaling the deployment:
+
+```
+kubectl scale deployments backplane-ingress-controller -n kube-system --replicas=3
+```
+
 ## Future Work
 
 - Make a native Backplane Ingress controller instead of relying on nginx see https://github.com/kubernetes/ingress/tree/master/examples/custom-controller
