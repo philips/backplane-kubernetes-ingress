@@ -3,3 +3,31 @@
 ## Backplane Container
 
 Simple container of the Backplane.io agent.
+
+## Setup NGINX Ingress
+
+
+```
+kubectl create -f https://raw.githubusercontent.com/kubernetes/ingress/master/examples/deployment/nginx/nginx-ingress-controller.yaml
+```
+
+```
+kubectl create -f https://raw.githubusercontent.com/kubernetes/ingress/master/examples/deployment/nginx/default-backend.yaml
+```
+
+## Setup Backplane Agent
+
+```
+export BACKPLANE_TOKEN=MYSECRETS
+```
+
+```
+export BACKPLANE_ENDPOINT=patient-spark-20.backplaneapp.io
+```
+
+**HACK** Using minikube host IP for ingress, run nginx in same pod as backplane in next iteration
+
+```
+kubectl run backplane --image=quay.io/philips/backplane:stable --env BACKPLANE_TOKEN=${BACKPLANE_TOKEN} -- backplane connect  "endpoint=${BACKPLANE_ENDPOINT},release=v1" http://192.168.64.2:80
+```
+
