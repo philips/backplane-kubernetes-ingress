@@ -5,8 +5,8 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
-ARCH=$(go env GOARCH)
-OS=$(go env GOOS)
+[ -z ${ARCH} ] && ARCH=$(go env GOARCH)
+[ -z ${OS} ] && OS=$(go env GOOS)
 DOCKERFILE="Dockerfile-release"
 TAG="quay.io/philips/backplane"
 
