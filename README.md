@@ -28,7 +28,7 @@ kubectl create -f https://raw.githubusercontent.com/kubernetes/ingress/master/ex
 
 ```
 kubectl run --image=quay.io/philips/host-info:latest host-info
-kubectl expose deployment host-info --session-affinity=None --port 8080<Paste>
+kubectl expose deployment host-info --session-affinity=None --port 8080
 kubectl create -f https://raw.githubusercontent.com/philips/host-info/master/ingress.yaml
 ```
 
