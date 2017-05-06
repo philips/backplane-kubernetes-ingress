@@ -1,6 +1,6 @@
-## Backplane Container
+## Backplane.io Ingress Controller
 
-Simple setup to get Backplane.io agent exposing Kubernetes Ingress.
+Simple setup to get [Backplane.io](https://www.backplane.io/) hooked up as a Kubernetes Ingress Controller.
 
 ## Setup Backplane Ingress Controller
 
